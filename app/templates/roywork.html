@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Roy's Portfolio Page</title>
-  </head>
+    <head>
+        <title> Roy's Portfolio Page</title>
+    </head>
+        {% extends 'base.html' %}
 
-  {% extends 'base.html' %}
+        <body>
+            {% block content %}
+            <div class="mainText">
+            <h1>Roy's Portfolio Page</h1>
+            <div class="img-holder">
+                <img src="/static/img/roy/roy.jpeg" width="200" height="200"/>
+            </div>
+            <h3>About Myself</h3>
+            <p>Rising Sophomore at Georgetown studying Computer Science. I'm part of The Corp (The world's largest
+                undergraduate nonprofit in the world) in the IT department. I'm also part of the Georgetown Fencing Club. 
+            </p>
 
-  <body>
-    {% block content %}
+            <h3>Previous Work Experience</h3>
+            <p>- JAN 2022 - PRESENT<br>
+                SOFTWARE DEVELOPER
+                <br>
+                Developed an HR-Portal used by 300+ employees of the Corp for work tasks 
+                including clocking in and out, COVID-19 test submissions, orgnaization news, and 
+                time clock management using Django
+ 
+            </p>
+            <h3>Activities</h3>
+            <p>- JULY 2020 - PRESENT<br>
+                FOUNDER AND DEVELOPER, GOGIG APP
+                <br>
+                Designed and implemented a mobile application that helped student musicians start playing for gigs at local venues
+                using React Native at DeltaX Hacks (Virtual International Hackathon)
+            </p>
+            <p>- JUNE 2020 - JUN 2018<br>
+                FOUNDER AND DEVELOPER, EASY ENTRY APP
+                <br>
+                Devloped a mobile application using React Native that assisted people with disabilities rate public 
+                areas in the community based on accessibility at MLH Summer League (International High School Hackathon)
+            </p>
 
-    <div class="mainText">
-      <h1>Roy's Portfolio Page</h1>
+            <h3>Education</h3>
+            <p>- EXPECTED MAY 2025 <br>
+                BACHELOR OF SCIENCE, Georgetown University
+                Continuing education in Computer Science
+                Programming languages and Framworks: C++, Python, Java, React Native, React, Flutter
+            </p>
+            <p>- JUN 2019<br>
+                HIGH SCHOOL DIPLOMA, Semiahmoo Secondary School
+                4.0 GPA, Semiahmoo Principal's Award 
+                </p>
+            <h3>Hobbies</h3>
+            <hr style="width:100%; height:6px; background-color: rgb(0,0,0); border:none;" />
+      <br>
+      <a href="{{url_for('royhobby')}}"> <h3>Photo Gallery of My Hobbies</h3></a>
+      <br>
+      <hr style="width:100%; height:6px; background-color: rgb(0,0,0); border:none;" />
+      <h3>Places I Have Visited</h3>
       <div class="img-holder">
-        <img src="/static/img/roy/roy.jpeg" width="200" height="200" />
-      </div>
-      <h3>About Myself</h3>
-      <p>
-        Rising Sophomore at Georgetown studying Computer Science. I'm part of
-        The Corp (The world's largest undergraduate nonprofit in the world) in
-        the IT department. I'm also part of the Georgetown Fencing Club.
-      </p>
-
-      <h3>Previous Work Experience</h3>
-      <p>
-        - JAN 2022 - PRESENT<br />
-        SOFTWARE DEVELOPER
-        <br />
-        Developed an HR-Portal used by 300+ employees of the Corp for work tasks
-        including clocking in and out, COVID-19 test submissions, orgnaization
-        news, and time clock management using Django
-      </p>
-      <h3>Activities</h3>
-      <p>
-        - JULY 2020 - PRESENT<br />
-        FOUNDER AND DEVELOPER, GOGIG APP
-        <br />
-        Designed and implemented a mobile application that helped student
-        musicians start playing for gigs at local venues using React Native at
-        DeltaX Hacks (Virtual International Hackathon)
-      </p>
-      <p>
-        - JUNE 2020 - JUN 2018<br />
-        FOUNDER AND DEVELOPER, EASY ENTRY APP
-        <br />
-        Devloped a mobile application using React Native that assisted people
-        with disabilities rate public areas in the community based on
-        accessibility at MLH Summer League (International High School Hackathon)
-      </p>
-
-      <h3>Education</h3>
-      <p>
-        - EXPECTED MAY 2025 <br />
-        BACHELOR OF SCIENCE, Georgetown University Continuing education in
-        Computer Science Programming languages and Framworks: C++, Python, Java,
-        React Native, React, Flutter
-      </p>
-      <p>
-        - JUN 2019<br />
-        HIGH SCHOOL DIPLOMA, Semiahmoo Secondary School 4.0 GPA, Semiahmoo
-        Principal's Award
-      </p>
-      <h3>Hobbies</h3>
-      <p></p>
+        <img
+          src="/static/img/roy/korea.jpeg"
+          width="200"
+          height="300"
+        />
+        <a>South Korea Map</a>
     </div>
-
-    {% endblock %}
-  </body>
+    <br>
+    <div>
+        <img
+          src="/static/img/roy/mexico.jpeg"
+          width="300"
+          height="200"
+        />
+        <a>Mexico Map</a>
+      </div>
+    </div>
+    </div>
+                
+            </p>
+            {% endblock %}
+        </body>
 </html>

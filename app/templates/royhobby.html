@@ -1,1 +1,40 @@
-{% extends 'base.html' %} {% block content %} {% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hobbies</title>
+  </head>
+
+  {% extends 'base.html' %}
+
+  <body>
+    {% block content %}
+
+    <div class="mainText">
+      <h3>Hobbies</h3>
+      <p>    
+      <div class="img-holder">
+          <img src="/static/img/roy/mobileapp.webp" width="350" height="400" />
+          </div>
+      <h4>Building Mobile Apps:</h4>
+        I love to build mobile applications that solve community issues! I love competing in Hackathons
+        and working with like-minded individuals!</p>
+        <br><br>
+
+        <div class="img-holder">
+          <img src="/static/img/roy/overwatch.jpeg" width="300" height="400" />
+          <img src="/static/img/roy/valorant.jpeg" width="500" height="300" />
+          <img src="/static/img/roy/genji.jpeg" width="300" height="300" />
+        </div>
+        
+        <p>
+          <h4>Playing PC games:</h4>
+        Another activity I like doing in my free time is playing video games! My favorite games include Overwatch, Valorant, and
+        Rainbow Six: Siege. I also like watching Overwatch League and VCT!
+        </p>
+      
+      </p>
+  </div>
+  
+  {% endblock %}
+  </body>
+</html>

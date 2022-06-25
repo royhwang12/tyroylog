@@ -20,6 +20,12 @@ body {
 
 .mainText {
   margin: 10px;
+  min-height: calc(100vh - 201px);
+}
+
+.mainTextTylerHobby {
+  margin: 10px;
+  min-height: calc(100vh - 204px);
 }
 
 .nav-bar {
@@ -92,6 +98,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.aboutprofile {
+  text-align: center;
+  height: auto;
+  margin: 70px;
+  min-height: calc(100vh - 312.5px);
+}
+
+.aboutprofile h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: black;
 }
 
 .profile {
@@ -208,7 +227,7 @@ body {
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #e2a11f;
 }
 
 /* Dropdown content (hidden by default) */

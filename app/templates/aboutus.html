@@ -1,1 +1,52 @@
-{% extends 'base.html' %} {% block content %} {% endblock %}
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<meta property="og:title" content="Personal Portfolio" />
+<meta property="og:description" content="My Personal Portfolio" />
+<meta property="og:url" content="{{ url }}" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+  rel="stylesheet"
+/>
+
+<link lang="sass" rel="stylesheet" href="/static/styles/main.css" />
+<link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+
+<header class="nav-bar">
+  <div class="nav-content">
+    <a href="/">
+      <div class="nav-logo">
+        <img src="/static/img/logo.svg" />
+      </div>
+    </a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Team Member Pages
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{{url_for('loganwork')}}">Logan's Page</a>
+        <a href="{{url_for('roywork')}}">Roy's Page</a>
+        <a href="{{url_for('tylerwork')}}">Tyler's Page</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<title>About The Team</title>
+
+<body>
+  <div class="aboutprofile">
+    <h1>About The Team</h1>
+    <p>We are team TyRoyLog,</p>
+    <p>a subset of pod Python Pythons within the Production Engineering track of the MLH Fellowship.</p>
+    <p>Our team is made up of Tyler Holstein, Roy Hwang, and Logan Deal.</p>
+    <p></p>
+  </div>
+</body>
+</html>
