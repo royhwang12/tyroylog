@@ -11,6 +11,7 @@
     {% block content %}
 
     <div class="profile">
+
       <div id="profile-picture" class="profile-picture">
         <a href="{{url_for('loganwork')}}" class="homeLink">
         <div class="img-holder">
@@ -33,7 +34,16 @@
           <br />
         </div>
         </a>
+
       </div>
+
+    </div>
+    <div>
+      <a href="{{url_for('timeline')}}">
+        <button type="button">Timeline</button>
+      </a>
+      
+      
     </div>
 
     {% endblock %}

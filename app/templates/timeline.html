@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Roy's Timeline Page</title>
+
+
+    </head>
+        {% extends 'base.html' %}
+
+        <body>
+            {% block content %}
+            <div class="mainText">
+            <h1>Roy's Portfolio Page</h1>
+            <div class="img-holder">
+                <img src="/static/img/roy/roy.jpeg" width="200" height="200"/>
+            </div>
+            <div class="container">
+                <form id="form">
+              
+                  <label for="fname">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name..">
+              
+                  <label for="Email">Email</label>
+                  <input type="text" id="email" name="email" placeholder="Your email..">
+              
+                  <label for="country">Content</label>
+                  <input type="text" id="content" name="content" placeholder="Content..">
+              
+                  <button type="submit">Submit</button>
+              
+                </form>
+                <script>
+                    const form = document.getElementById('form');
+                    form.addEventListener('submit', function(e) {
+                        console.log("Function run")
+                        e.preventDefault()
+                        const payload = new FormData(form)
+                        fetch('http://127.0.0.1:5000/api/timeline_post', {
+                            method: 'POST',
+                            body: payload,
+                        }
+                        )
+                        .then(res => res.json())
+                        .then(data => console.log(data))
+                        location.reload()
+                    })
+                </script>
+
+
+                {% for item in posts %} 
+                <div class="card" id="posts">
+                    <h2>{{item.name}}</h2>
+                    <p>{{item.email}}<p>
+                    <p>{{item.content}}</p>
+                </div>
+                {% endfor %}
+
+
+
+                
+            
+              </div>
+    </div>
+                
+            </p>
+            {% endblock %}
+        </body>
+</html>

@@ -60,6 +60,11 @@ def royhobby():
 def aboutus():
     return render_template('aboutus.html')
 
+@app.route('/timeline/')
+def timeline():
+    posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    return render_template('timeline.html', posts=posts)
+
 if __name__ ==  "__main__":
     app.run()
 
