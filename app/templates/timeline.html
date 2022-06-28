@@ -31,11 +31,11 @@
                 </form>
                 <script>
                     const form = document.getElementById('form');
-                    form.addEventListener('submit', function(e) {
+                    form.addEventListener('submit', async function(e) {
                         console.log("Function run")
                         e.preventDefault()
                         const payload = new FormData(form)
-                        fetch('http://104.248.9.53:5000/api/timeline_post', {
+                        await fetch('http://104.248.9.53:5000/api/timeline_post', {
                             method: 'POST',
                             body: payload,
                         }
