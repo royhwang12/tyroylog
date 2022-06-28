@@ -41,7 +41,10 @@
                         }
                         )
                         .then(res => res.json())
-                        .then(location.reload())
+                        .then(data => {
+                        console.log(data)
+                        location.reload()
+                        })
                     })
                 </script>
 
