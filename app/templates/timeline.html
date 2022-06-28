@@ -23,7 +23,7 @@
                   <label for="Email">Email</label>
                   <input type="text" id="email" name="email" placeholder="Your email..">
               
-                  <label for="country">Content</label>
+                  <label for="Country">Content</label>
                   <input type="text" id="content" name="content" placeholder="Content..">
               
                   <button type="submit">Submit</button>
@@ -42,8 +42,7 @@
                         )
                         .then(res => res.json())
                         .then(data => console.log(data))
-                        form.reset();
-                        location.reload();
+                        .then(location.reload());
                     })
                 </script>
 
