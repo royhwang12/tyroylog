@@ -1,7 +1,7 @@
 import requests
 
 def generate_random_name():
-    name = requests.get("https://api.namefake.com/")
+    name = requests.get("https://api.namefake.com/american/male")
     return name.json()['name']
 
 def generate_random_content():
