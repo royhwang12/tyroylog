@@ -15,7 +15,33 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get("/")
         assert response.status_code == 200
         html = response.get_data(as_text=True)
+
+        # Length of html must be greater than 0
+        self.assertGreater(len(html), 0)
+
+        # Title must match "TyRoyLog Portfolio"
         assert "<title>TyRoyLog Portfolio</title>" in html
+
+        # Must be an HTML response
+        self.assertEqual(response.mimetype, 'text/html')
+
+        # Must have a !DOCTYPE html tag
+        self.assertIn("<!DOCTYPE html>", html)
+
+        # Must have head tags
+        self.assertIn("head", html)
+
+        # Must have a meta charset="utf-8"
+        self.assertIn('<meta charset="utf-8" />', html)
+
+        # Must have link tags
+        self.assertIn('link', html)
+
+        # Must have header tags
+        self.assertIn('header', html)
+
+        # Must have footer tags
+        self.assertIn('footer', html)
 
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
