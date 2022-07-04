@@ -278,12 +278,31 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 400
         html = response.get_data(as_text=True)
         assert "Invalid name" in html
+        
+        # POST request with empty name
+        response = self.client.post("/api/timeline_post", data={
+            "name": "",
+            "email": "john@example.com",
+            "content": "Hello world, I'm John!"
+        })
+        assert response.status_code == 400
+        html = response.get_data(as_text=True)
+        assert "Invalid name" in html
 
         # POST request with empty content
         response = self.client.post("/api/timeline_post", data={
             "name": "John Doe",
             "email": "john@example.com",
             "content": ""
+        })
+        assert response.status_code == 400
+        html = response.get_data(as_text=True)
+        assert "Invalid content" in html
+
+        # POST request with missing content
+        response = self.client.post("/api/timeline_post", data={
+            "name": "John Doe",
+            "email": "john@example.com",
         })
         assert response.status_code == 400
         html = response.get_data(as_text=True)
@@ -305,7 +324,16 @@ class AppTestCase(unittest.TestCase):
             "name": "John Doe",
             "content": "Hello world, I'm John"
         })
+        assert response.status_code == 400
+        html = response.get_data(as_text=True)
+        assert "Invalid email" in html
 
+        # POST request with empty email
+        response = self.client.post("/api/timeline_post", data={
+            "name": "John Doe",
+            "content": "Hello world, I'm John",
+            "email": ""
+        })
         assert response.status_code == 400
         html = response.get_data(as_text=True)
         assert "Invalid email" in html
