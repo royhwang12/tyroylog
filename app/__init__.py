@@ -34,6 +34,7 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
+mydb.close()
 
 
 @app.route('/')
@@ -79,11 +80,9 @@ def aboutus():
 @app.route('/timeline/')
 def timeline():
     posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    mydb.close()
     return render_template('timeline.html', posts=posts)
 
-
-if __name__ == "__main__":
-    app.run()
 
 
 @app.route('/api/timeline_post', methods=['POST'])
@@ -101,17 +100,20 @@ def post_time_line_post():
     else:
         timeline_post = TimelinePost.create(
             name=name, email=email, content=content)
+        mydb.close()
         return model_to_dict(timeline_post)
 
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
+    posts = [
+        model_to_dict(p)
+        for p in
+        TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    ]
+    mydb.close()
     return {
-        'timeline_posts': [
-            model_to_dict(p)
-            for p in
-            TimelinePost.select().order_by(TimelinePost.created_at.desc())
-        ]
+        'timeline_posts': posts
 
     }
 
@@ -119,10 +121,16 @@ def get_time_line_post():
 @app.route('/api/timeline_post', methods=['DELETE'])
 def delete_time_line_post():
     delete_timeline_posts = TimelinePost.delete().execute()
+    posts = [
+        model_to_dict(p)
+        for p in
+        TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    ]
+    mydb.close()
     return {
-        'timeline_posts': [
-            model_to_dict(p)
-            for p in
-            TimelinePost.select().order_by(TimelinePost.created_at.desc())
-        ]
+        'timeline_posts': posts
     }
+
+
+if __name__ == "__main__":
+    app.run()
