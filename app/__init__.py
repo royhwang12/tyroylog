@@ -17,7 +17,7 @@ else:
                          user=os.getenv("MYSQL_USER"),
                          password=os.getenv("MYSQL_PASSWORD"),
                          host=os.getenv("MYSQL_HOST"),
-                         port=3306
+                         port=5000
                          )
     print(mydb)
 
