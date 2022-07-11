@@ -35,4 +35,4 @@ nginx:
 
 volumes:
   mydatabase:
-  nginx_secrets
+  nginx_secrets:
