@@ -63,7 +63,7 @@ class AppTestCase(unittest.TestCase):
 
         # Make a POST request
         response = self.client.post("/api/timeline_post", data={
-            "name": name,
+            "name": Roy Hwang,
             "email": email,
             "content": content
         })
