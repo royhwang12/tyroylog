@@ -30,3 +30,8 @@ jobs:
       
       - name: Deploy Site
         run: ssh my-vps '~/redeploy-site.sh'
+      
+      - name: Container Status
+        run: |
+          cd tyroylog
+          docker-compose ps
