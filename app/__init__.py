@@ -34,7 +34,7 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-#mydb.close()
+mydb.close()
 
 
 @app.route('/')
@@ -80,7 +80,7 @@ def aboutus():
 @app.route('/timeline/')
 def timeline():
     posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
-    #mydb.close()
+    mydb.close()
     return render_template('timeline.html', posts=posts)
 
 
@@ -100,7 +100,7 @@ def post_time_line_post():
     else:
         timeline_post = TimelinePost.create(
             name=name, email=email, content=content)
-        #mydb.close()
+        mydb.close()
         return model_to_dict(timeline_post)
 
 
@@ -111,7 +111,7 @@ def get_time_line_post():
         for p in
         TimelinePost.select().order_by(TimelinePost.created_at.desc())
     ]
-    #mydb.close()
+    mydb.close()
     return {
         'timeline_posts': posts
 
@@ -126,7 +126,7 @@ def delete_time_line_post():
         for p in
         TimelinePost.select().order_by(TimelinePost.created_at.desc())
     ]
-    #mydb.close()
+    mydb.close()
     return {
         'timeline_posts': posts
     }
