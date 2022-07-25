@@ -57,13 +57,13 @@ class AppTestCase(unittest.TestCase):
         # Testing POST method of /api/timeline_post
 
         # Generate information for the timeline post
-        name = generate_random_name()
+        name = 'Roy Hwang'
         email = generate_random_email(name)
         content = generate_random_content()
 
         # Make a POST request
         response = self.client.post("/api/timeline_post", data={
-            "name": Roy Hwang,
+            "name": name,
             "email": email,
             "content": content
         })
