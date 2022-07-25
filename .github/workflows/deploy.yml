@@ -33,5 +33,5 @@ jobs:
       
       - name: Container Status
         run: |
-          cd tyroylog
+          cd ~/tyroylog/
           docker-compose ps
